@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Loading...</title>
+        <style>
+            html, body { height: 100%; }
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: gray;
+                overflow: hidden;
+            }
+            h1 {
+                font-size: 80px;
+                position: absolute;
+                top: 15%;
+                left: 39%;
+            }
+            .spinner {
+                width: 400px;
+                height: 400px;
+            }
+            .spinner svg {
+                animation: rotate 2s linear infinite;
+            }
+            .spinner circle {
+                animation: dash 1.5s ease-in-out infinite;
+                fill: none;
+                stroke-width: 3;
+                stroke: black;
+            }
+
+            @keyframes rotate {
+                from {
+                    tranform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes color {
+                100%, 0% {
+                    stroke: #4285F4;
+                }
+                25% {
+                    stroke: #de3e35;
+                }
+                50% {
+                    stroke: #f7c223;
+                }
+                75% {
+                    stroke: #1da760;
+                }
+            }
+
+            @keyframes dash {
+                0% {
+                    stroke-dasharray: 1, 200;
+                    stroke-dashoffset: 0;
+                }
+                50% {
+                    stroke-dasharray: 89, 200;
+                    stroke-dashoffset: -35;
+                }
+                100% {
+                    stroke-dasharray: 89, 200;
+                    stroke-dashoffset: -124;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Loading---</h1>
+        <div class="spinner">
+            <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="20" />
+            </svg>
+        </div>
+        <script>
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 1000);
+        </script>
+    </body>
+</html>
